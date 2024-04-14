@@ -579,7 +579,7 @@ void addStreamProxy(const string &vhost, const string &app, const string &stream
     auto key = getProxyKey(vhost, app, stream);
     if (s_player_proxy.find(key)) {
         //已经在拉流了
-        cb(SockException(Err_other, "This stream already exists"), key);
+        cb(SockException(Err_success), key);
         return;
     }
     //添加拉流代理
